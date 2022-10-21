@@ -23,6 +23,9 @@ function login(e){
 
         if(usuarioVal == objeto.user && passwordVal == objeto.pass){
             creaMensaje('Usuario correcto', 'success');
+            setTimeout(function(){
+                window.open('../inicio.html','_self');
+            },2000);
         } else {
             creaMensaje('Usuario Incorecto', 'danger');
         } 
