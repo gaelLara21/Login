@@ -11,15 +11,28 @@ function registro(e){
     e.preventDefault();
     
     let nombreVal = nombre.value;
-    let emaileVal = email.value;
+    let emailVal = email.value;
     let userVal = user.value;
     let passValue = pass.value;
 
-    if(nombreVal == '' || emaileVal == '' || userVal == '' || passValue == ''){
+    if(nombreVal == '' || emailVal == '' || userVal == '' || passValue == ''){
         return;
     }
 
-    console.log('Validando datos');
+    const usuario = {
+        nombre: nombreVal,
+        email: emailVal,
+        user: userVal,
+        pass: passValue
+    }
+    
+    localStorage.setItem('usuario', JSON.stringify(usuario));
 
+     nombre.value = '';
+     email.value = '';
+     user.value = '';
+     pass.value = '';
+
+    console.log('usuario guardado');
 }
 
